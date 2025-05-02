@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        bat './build.sh'
+        sh './build.sh'
       }
     }
     stage('Test') {
