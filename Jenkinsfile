@@ -1,17 +1,18 @@
 pipeline {
   parameters {
-    string(name: 'BRANCH', defaultVlaue: 'main', description: 'test...')
+    string(name: 'BRANCH', defaultValue: 'main', description: '빌드할 git branch')
   }
   agent any
   stages {
     stage('Checkout') {
       steps {
-        echo 'Building branch: ${params.BRANCH}'
+        echo "Building branch: ${params.BRANCH}"
       }
     }
     stage('Build') {
       steps {
-        sh 'chmod +x build.sh && ./build.sh'
+        sh 'chmod +x ./build.sh'
+        sh './build.sh'
       }
     }
     stage('Test') {
