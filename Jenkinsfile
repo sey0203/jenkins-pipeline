@@ -3,15 +3,12 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/sey0203/jenkins-pipeline.git'
-        echo "소스코드를 Git 저장소에서 성공적으로 가져왔습니다."
+        git url: 'https://github.com/sey0203/jenkins-pipeline.git', branch: 'main'
       }
     }
     stage('Setup') {
       steps {
         echo "Python 환경을 설정합니다."
-        sh 'pip install --upgrade pip'
-        sh 'pip install pytest'
         echo 'Python 환경설정 완료. (pytest 설치 완료)'
       }
     }
