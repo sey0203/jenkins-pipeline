@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git url: 'https://github.com/sey0203/jenkins-pipeline.git'
+        git branch: 'main', url: 'https://github.com/sey0203/jenkins-pipeline.git'
         echo "소스코드를 Git 저장소에서 성공적으로 가져왔습니다."
       }
     }
